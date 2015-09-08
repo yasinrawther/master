@@ -1,0 +1,13 @@
+scripts/credentials.sh
+scripts/dev_credentials.sh
+scripts/mongo_server_check.sh
+*.pyc
+*.log
+logs/*.log*
+static/scripts/untitled
+data
+*.db
+.DS_Store
+*.db
+*.out
+**/migrations
