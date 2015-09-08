@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app = 'donorapp'>
+<head>
+<link rel="stylesheet" type = "text/css" href="{{STATIC_URL}}donorcss/donor.css">
+
+	<title></title>
+</head>
+{% verbatim %}
+
+<body ng-controller="donorappctrlr" ng-init="age()" ><br>
+<a href='/userlogin/'>Back</a>
+<div style="margin-left: 34%;margin-top: 2%;font-size: 26px;">User Register:</div>
+<div class="signup"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Username:<input type="text" ng-model="username" style="margin-left: 16%;"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gender:<select style="width:70px;margin-left: 22%;" ng-model="gender_model" ng-options="a for a in gender" ng-init="gender_model=gender[0];">
+	
+</select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Age:<select style="width: 45px;margin-left:28%;" ng-model="gender_model" ng-options="a for a in age" ng-init="gender_model=gender[0];">
+</select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Email_address:<input type="text" ng-model="mail"style="margin-left: 8%;"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Mobile:<input type="text" ng-model="number"style="margin-left: 22%;"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Place:<input type="text" ng-model="address"style="margin-left: 25%;"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Password:<input type="password" ng-model="pswd"style="margin-left: 18%;"><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReEnter Password:<input type="password" ng-model="rpswd"style="margin-left: 1%;"><br><br><br>
+<input type="button" value = "Save" ng-click="save(username,gender_model,age,mail,number,address,pswd,rpswd)" style="margin-left: 43%;"><br>
+</div>
+</body>
+{% endverbatim %}
+<script src="{{STATIC_URL}}js/angular.js"></script>
+<script src="{{STATIC_URL}}js/angular.min.js"></script>
+<script src="{{STATIC_URL}}js/angular-resource.js"></script>
+<script src="{{STATIC_URL}}js/angular-route.js"></script>
+<script src="{{ STATIC_URL }}js/min.js"></script>
+<script src="{{STATIC_URL}}js/angular_cookie.js"></script>
+<script src = "{{STATIC_URL}}js/donor.js"></script>
+</html>

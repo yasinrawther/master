@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app = "donorapp">
+<head>
+<link rel="stylesheet" type = "text/css" href="{{STATIC_URL}}donorcss/donor.css">
+
+	<title>login</title>
+</head>
+
+<body ng-controller = "donorappctrlr" class="login">
+ <div style="font-size: 30px;margin-left: 0%;text-align: center;background-color: lightsteelblue;">Login</div><br><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;UserName:<input type = "text" ng-model = "username" id = "username" style="margin-left: 2%;"><br><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Password:<input type = "password" ng-model = "password" id = "password" style="margin-left: 4%;"><br><br>	
+ <input type="button" value = "login" ng-click="login(username,password)" style="margin-left: 45%;"><br><br>
+ <a href='/userregister' style="margin-left: 80%;">Signup</a><br><a href='/forgetpaswd' style="margin-left: 2%;">forgetpassword</a>
+ 
+ <!-- <a href='/adminpage'>Adminpage</a>	 -->
+</body>
+<script src="{{STATIC_URL}}js/angular.js"></script>
+<!-- <script src="{{STATIC_URL}}js/angular-animate.js"></script> -->
+<script src="{{STATIC_URL}}js/angular.min.js"></script>
+<script src="{{STATIC_URL}}js/angular-resource.js"></script>
+<script src="{{STATIC_URL}}js/angular-route.js"></script>
+<script src="{{ STATIC_URL }}js/min.js"></script>
+<script src="{{STATIC_URL}}js/angular_cookie.js"></script>
+<script src = "{{STATIC_URL}}js/donor.js"></script>
+
+</html>

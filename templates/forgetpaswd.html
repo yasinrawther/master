@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="donorapp">
+<head>
+	<title></title>
+</head>
+{% verbatim %}
+<body ng-controller="donorappctrlr" ng-init="project()">
+Enter Username:<input type="text" ng-model="userame"><br>
+Enter Password:<input type="password" ng-model="epswd"><br>
+Re-Enter Password:<input type="password" ng-model="repswd"><br>
+<input type="button" value = "Save" ng-click="change_pswd(userame,epswd,repswd)">
+{% endverbatim %}
+</body>
+<script src="{{STATIC_URL}}js/angular.js"></script>
+<script src="{{STATIC_URL}}js/angular.min.js"></script>
+<script src="{{STATIC_URL}}js/angular-resource.js"></script>
+<script src="{{STATIC_URL}}js/angular-route.js"></script>
+<script src="{{ STATIC_URL }}js/min.js"></script>
+<script src="{{STATIC_URL}}js/angular_cookie.js"></script>
+<script src = "{{STATIC_URL}}js/donor.js"></script>
+</html>

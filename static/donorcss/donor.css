@@ -1,0 +1,76 @@
+.h1{
+	border-color: black;	
+	margin-top: 0px;
+	font-size: 40px;
+	text-align: center;
+}
+.form{
+	border:1px solid black;
+	border-radius:10px;
+	margin-left: 31%;
+	/*border-width: 100px;*/
+	width:500px;
+	height:211px;
+	/*height:30px;*/
+	/*border-color:black;*/
+	margin-top:-30px;
+}
+.pro{
+	border:1px solid gray;
+	width: 25%;
+	height: 146px;
+	border-radius: 5px;
+	border-width: 2px;
+	margin-top: 1%;
+}
+.deletepro{
+	margin-left: 69%;
+    margin-top: -11%;
+    border:1px solid gray;
+    border-radius: 5px;
+	border-width: 2px;
+	width: 25%;
+	height: 146px;
+
+}
+.error_msg{
+	margin-left: 2%;
+    margin-top: -3%;
+    color:darkgreen;
+}
+.search{
+	border:1px solid gray;
+	width: 25%;
+	height: 181px;
+	border-radius: 5px;
+	border-width: 2px;
+	margin-left: 9%;
+	margin-top: -22px;
+}
+.login{
+	border: 1px solid gray;
+    width: 25%;
+	height: 241px;
+	border-radius: 5px;
+	border-width: 2px;
+	margin-left: 34%;
+	margin-top: 12%;
+}
+.signup{
+	border: 1px solid gray;
+    width: 25%;
+	height: 405px;
+	border-radius: 5px;
+	border-width: 2px;
+	margin-left: 34%;
+	margin-top: 2%;
+}
+.settings{
+	border: 1px solid gray;
+	width: 25%;
+	height: 156px;
+	border-radius: 5px;
+	border-width: 2px;
+	margin-left: 9%;
+	margin-top: 5%;
+}

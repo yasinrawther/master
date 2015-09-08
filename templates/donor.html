@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="donorapp">
+<head>
+	<link rel="stylesheet" type = "text/css" href="{{STATIC_URL}}donorcss/donor.css">
+</head>
+<h1 class="h1">My Contribution</h1>
+<a href = "/logout_view/" style="margin-left: 93%;">Logout</a>
+{% verbatim %}
+
+<a href = "/settings/" style="margin-left: 93%;">settings</a>
+<body ng-controller = "donorappctrlr" ng-init="pro()" >
+<div ng-init="my_cont()"></div>
+
+<div class="form"><div style="font-size:18px;color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;New Contribution:</div><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<select  ng-model="project_model" ng-options="a.project for a in projects" ng-init="project_model=project[0];"  style="margin-left:4%;"></select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Schemes&nbsp;&nbsp;:
+
+<select  ng-model="schemes_model" ng-options="a for a in schemes"  ng-init="schemes_model=project_model['schemes'][0];" style="margin-left:3%;" ng-change="change_project(project_model,schemes_model)"></select>
+<span class="error_msg">{{error_msg}}</span><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Amount&nbsp;&nbsp;&nbsp;:<input type="text" ng-model = "amount" style="margin-left:4%;">Rs.<br><br>
+<!-- &nbsp;&nbsp;&nbsp;&nbsp;Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" ng-model = "status" style="margin-left:4%;"><br> -->
+<input type="button" value="Submit" ng-click="submit(project_model,schemes_model,amount)" style="margin-left: 42%;margin-top: 11px;"><br><br>
+</div>
+<table id="recordLength" border="3" bgcolor="white" ng-class='my_cont_class'style="border-radius:10px;width: 82%;height: 30px;border-color: whitesmoke;margin-top: 40px;margin-left: 9%;">
+    <th>project</th><th>scheme</th><th>amount</th><th>Paid date</th><th>status</th>
+	<tbody ng-repeat='i in my_contri'>
+	    <!-- <thead ng-repeat="a for a in project_head"></thead> -->
+
+		<tr><td>{{i.project}}</td><td>{{i.scheme}}</td><td>{{i.amount}}</td><td>{{i.paid_date}}</td><td>{{i.status}}</td></tr>
+	</tbody>
+</table>
+
+</body>
+
+{% endverbatim %}
+<!-- <style  src="{{STATIC_URL}}donor_css/donor.css"></style> -->
+<script src="{{STATIC_URL}}js/angular.js"></script>
+<script src="{{STATIC_URL}}js/angular.min.js"></script>
+<script src="{{STATIC_URL}}js/angular-resource.js"></script>
+<script src="{{STATIC_URL}}js/angular-route.js"></script>
+<script src="{{ STATIC_URL }}js/min.js"></script>
+<script src="{{STATIC_URL}}js/angular_cookie.js"></script>
+<script src = "{{STATIC_URL}}js/donor.js"></script>
+</html>

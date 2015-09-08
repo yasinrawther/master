@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="donorapp">
+<head>
+<link rel="stylesheet" type = "text/css" href="{{STATIC_URL}}donorcss/donor.css">
+	<title></title>
+</head>
+{% verbatim %}
+<body ng-controller="donorappctrlr" >
+<a href="/adminpage">Back</a>
+<a href="/logout_view/" style="float:right;">Logout</a>
+
+<div style="margin-left:10%;font-size: 22px;margin-top: 3%;color: forestgreen;">Project Wise Total:</div>
+<table id="recordLength" border="3" bgcolor="white" ng-class='my_cont_class'style="border-radius:10px;width: 82%;height: 30px;border-color: whitesmoke;margin-top: 20px;margin-left: 9%;" ng-init="acont_setting()">
+<th>Project</th><th>Total</th>
+<tbody ng-repeat="i in sum">
+	
+	<tr><td>{{i.project}}</td><td>{{i.amount}}.Rs</td>
+</tbody>
+</table><br>
+<div style="margin-left: 36%;font-size: 21px;color:red;4px;margin-top: 18px;">Pending User Status:</div>
+<div ng-init="project()" class="search">
+
+<div style="color:blue;">&nbsp;&nbsp;&nbsp;&nbsp;Search Pending User:</div><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose Project:<select  ng-model="project_model" ng-options="a.project for a in project" style="margin-left:12%;"></select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose Scheme:&nbsp;<select  ng-model="schemes_model" ng-options="a for a in project_model['schemes']"  style="margin-left:9%;" ng-change="condition='';achange(schemes_model)"></select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose SubScheme:<select  ng-model="sub_schemes_model" ng-options="a for a in subscheme"style="margin-left:3%;" ng-change="condition='';"></select><br><br>
+<input type="button" value = "Search" ng-click="dnrs_status(project_model,schemes_model,sub_schemes_model)" style="margin-left: 39%;">{{condition}}
+
+</div>
+
+<table id="addad" border="3" bgcolor="white" ng-class='add'style="border-radius: 10px;
+width: 55%;
+height: 30px;
+border-color: whitesmoke;
+margin-top: -11%;
+margin-left: 36%;" >
+<th>User</th><th>Status</th>
+<tbody ng-repeat="a in pendinguser">
+    
+	<tr><td>{{a.user}}</td><td>{{a.status}}</td></tr>
+    
+</tbody>{{add}}
+
+</table>
+<!-- {{schemes}} -->
+</body>
+{% endverbatim %}
+<script src="{{STATIC_URL}}js/angular.js"></script>
+<script src="{{STATIC_URL}}js/angular.min.js"></script>
+<script src="{{STATIC_URL}}js/angular-resource.js"></script>
+<script src="{{STATIC_URL}}js/angular-route.js"></script>
+<script src="{{ STATIC_URL }}js/min.js"></script>
+<script src="{{STATIC_URL}}js/angular_cookie.js"></script>
+<script src = "{{STATIC_URL}}js/donor.js"></script>
+</html>

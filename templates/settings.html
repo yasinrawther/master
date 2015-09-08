@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="donorapp">
+<head>
+<link rel="stylesheet" type = "text/css" href="{{STATIC_URL}}donorcss/donor.css">
+
+	<title></title>
+</head>
+{% verbatim %}
+<div style="font-size: 20px;color: navy;">&nbsp;&nbsp;&nbsp;Set Project:</div>
+<body ng-controller="donorappctrlr" ng-init="project()" class="settings"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose Project:<select  ng-model="project_model" ng-options="a.project for a in project" style="margin-left:4%;"></select><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Choose Scheme:<select  ng-model="schemes_model" ng-options="a for a in project_model['schemes']"  ng-init="schemes_model=project_model['schemes'][0];" style="margin-left:3%;"></select><br><br>
+<input type="button" value = "Save" ng-click="go(project_model,schemes_model)" style="margin-left: 37%;">
+{% endverbatim %}
+</body>
+<script src="{{STATIC_URL}}js/angular.js"></script>
+<script src="{{STATIC_URL}}js/angular.min.js"></script>
+<script src="{{STATIC_URL}}js/angular-resource.js"></script>
+<script src="{{STATIC_URL}}js/angular-route.js"></script>
+<script src="{{ STATIC_URL }}js/min.js"></script>
+<script src="{{STATIC_URL}}js/angular_cookie.js"></script>
+<script src = "{{STATIC_URL}}js/donor.js"></script>
+</html>
